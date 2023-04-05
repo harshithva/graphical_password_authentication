@@ -12,7 +12,7 @@ import { router as contactRoutes } from './routes/contact.js'
 import { router as imageRoutes } from './routes/image.js'
 import { router as userRoutes } from './routes/users.js'
 
-console.log(process.env)
+// console.log(process.env)
 
 const app = express()
 const swaggerDocument = JSON.parse(
@@ -33,9 +33,9 @@ app.use('/api/digest', DigestRoutes)
 
 mongoose.set('strictQuery', true)
 mongoose
-    .connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_NAME}.ajnurbv.mongodb.net/?retryWrites=true&w=majority`)
+    .connect(`mongodb+srv://admin:jdSLdZFzx3MENPp8@cluster0.y9igriv.mongodb.net/gpa?retryWrites=true&w=majority`)
     .then(() => {
-        app.listen(process.env.PORT)
+        app.listen(8080)
         console.log("Server running...")
     })
     .catch(err => console.log(err))

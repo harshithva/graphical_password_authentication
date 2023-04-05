@@ -62,7 +62,8 @@ const signup = async (req, res, next) => {
         return next()
     }
 
-    try { token = jwt.sign({userId: createdUser.id, email: createdUser.email}, process.env.TOKEN_KEY) }
+    // try { token = jwt.sign({userId: createdUser.id, email: createdUser.email}, process.env.TOKEN_KEY) }
+    try { token = jwt.sign({userId: createdUser.id, email: createdUser.email}, "secret") }
     catch (err) {
         res.status(500).json({message: commons.token_failed})
         return next()

@@ -20,7 +20,7 @@ export default function Navbar(props) {
             {/*logo and text*/}
             <div className="flex items-center cursor-pointer" onClick={() => window.location.reload()}>
                 <img className="" width="24px" src="https://img.icons8.com/material-rounded/48/A259FF/cyber-security.png" alt=""/>
-                <p className="md:text-xl text-white ml-2 font-['Space_Mono']">Graphical Password Auth</p>
+                <p className="md:text-xl text-white ml-2 font-['Space_Mono']">Graphical Password Authentication</p>
             </div>
 
             {/*nav element list*/}

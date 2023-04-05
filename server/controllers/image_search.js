@@ -9,6 +9,7 @@ const search = async (req, res, next) => {
     const images = []
     const splitArrays = []
 
+    console.log("result");
     if (typeof keyword === 'undefined') {
         res.status(500).json({
             message: commons.invalid_params,
@@ -18,11 +19,14 @@ const search = async (req, res, next) => {
     }
 
     for(let i=0; i<pages; i++) {
+    
         const result = await unsplash.search.getPhotos({
             query: keyword,
             perPage: 30,
             orientation: 'landscape'
         })
+       
+        console.log(result);
         const resultsArray = result.response.results
         resultsArray.map(each => {
             images.push({

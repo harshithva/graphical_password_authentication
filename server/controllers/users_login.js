@@ -65,7 +65,8 @@ const login = async (req, res, next) => {
         return next()
     }
 
-    try { token = jwt.sign({userId: existingUser.id, email: existingUser.email}, process.env.TOKEN_KEY) }
+    // try { token = jwt.sign({userId: existingUser.id, email: existingUser.email}, process.env.TOKEN_KEY) }
+    try { token = jwt.sign({userId: existingUser.id, email: existingUser.email}, "secret") }
     catch (err) {
         console.log(err)
         res.status(500).json({message: commons.token_failed})
